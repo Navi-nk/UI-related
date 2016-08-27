@@ -1,4 +1,14 @@
 /* Date validation plug-in created by NAVI
+Contains two methods
+1. DateValidation - validates date in the format : dd-mm-yyy 
+param - input : date string
+param - output : bool value
+
+2. validate_date_range - validates from and to date in the format : dd-mm-yyyy
+param - input : from date string 
+param - input : to date string
+param - output : bool value
+
  * */
 
 function DateValidation(dt){
