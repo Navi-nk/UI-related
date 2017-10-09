@@ -7,18 +7,16 @@ import javax.sql.DataSource;
 
 public class Customer {
 
-	private Integer customerId;
+	private String customerId;
 	private String name;
 	private String address;
-	private String city;
-	private String email;
 	private String phone;
 
-	public Integer getCustomerId() {
+	public String getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(Integer customerId) {
+	public void setCustomerId(String customerId) {
 		this.customerId = customerId;
 	}
 
@@ -38,22 +36,6 @@ public class Customer {
 		this.address = address;
 	}
 
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public String getPhone() {
 		return phone;
 	}
@@ -64,12 +46,10 @@ public class Customer {
 
 	public static Customer populate(ResultSet rs) throws SQLException {
 		Customer c = new Customer();
-		c.address = rs.getString("ADDRESSLINE1");
-		c.city = rs.getString("CITY");
-		c.customerId = rs.getInt("CUSTOMER_ID");
-		c.email = rs.getString("EMAIL");
-		c.name = rs.getString("NAME");
-		c.phone = rs.getString("PHONE");
+		c.address = rs.getString("address");
+		c.customerId = rs.getString("id");
+		c.name = rs.getString("name");
+		c.phone = rs.getString("contact");
 
 		return (c);
 	}

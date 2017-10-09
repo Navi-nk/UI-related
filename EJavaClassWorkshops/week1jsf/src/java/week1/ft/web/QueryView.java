@@ -15,13 +15,13 @@ import javax.sql.DataSource;
 @Named
 public class QueryView {
 
-	private static final String FIND_BY_CUSTID = "select * from CUSTOMER where CUSTOMER_ID = ?";
+	private static final String FIND_BY_CUSTID = "select * from user where id = ?";
 
-	@Resource(lookup = "jdbc/ejavaft")
+	@Resource(lookup = "jdbc/pheonixDBPool")
 	private DataSource ds;
 
 	private Customer customer = null;
-	private Integer queryId;
+	private String queryId;
 
 	public Customer getCustomer() {
 		return customer;
@@ -30,10 +30,10 @@ public class QueryView {
 		this.customer = customer;
 	}
 
-	public Integer getQueryId() {
+	public String getQueryId() {
 		return queryId;
 	}
-	public void setQueryId(Integer queryId) {
+	public void setQueryId(String queryId) {
 		this.queryId = queryId;
 	}
 
@@ -45,7 +45,7 @@ public class QueryView {
 		try (Connection conn = ds.getConnection()) {
 
 			PreparedStatement ps = conn.prepareStatement(FIND_BY_CUSTID);
-			ps.setInt(1, queryId);
+			ps.setString(1, queryId);
 			ResultSet rs = ps.executeQuery();
 
 			if (!rs.next()) {

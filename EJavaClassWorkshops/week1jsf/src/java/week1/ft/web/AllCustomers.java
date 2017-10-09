@@ -16,9 +16,9 @@ import javax.sql.DataSource;
 @Named
 public class AllCustomers {
 
-	private static final String FIND_ALL = "select * from CUSTOMER";
+	private static final String FIND_ALL = "select * from user";
 
-	@Resource(lookup = "jdbc/ejavaft")
+	@Resource(lookup = "jdbc/pheonixDBPool")
 	private DataSource ds;
 
 	private List<Customer> customers = new LinkedList<>();
