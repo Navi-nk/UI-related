@@ -11,7 +11,7 @@
 
 		<h:dataTable var="c" value="#{allCustomers.customers}">
 			<h:column>
-				<h:link value="#{c.name}" outcome="query">
+                            <h:link value="#{c.tname}" outcome="query">
 					<f:param name="custId" value="#{c.customerId}"/>
 				</h:link>
 			</h:column>

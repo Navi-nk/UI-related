@@ -8,7 +8,20 @@ import javax.sql.DataSource;
 public class Customer {
 
 	private String customerId;
-	private String name;
+	private String tname;
+
+    public String getTname() {
+        return tname;
+    }
+
+    public void setTname(String tname) {
+        this.tname = tname;
+    }
+
+   
+
+  
+
 	private String address;
 	private String phone;
 
@@ -18,14 +31,6 @@ public class Customer {
 
 	public void setCustomerId(String customerId) {
 		this.customerId = customerId;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getAddress() {
@@ -48,7 +53,7 @@ public class Customer {
 		Customer c = new Customer();
 		c.address = rs.getString("address");
 		c.customerId = rs.getString("id");
-		c.name = rs.getString("name");
+		c.tName = rs.getString("name");
 		c.phone = rs.getString("contact");
 
 		return (c);
