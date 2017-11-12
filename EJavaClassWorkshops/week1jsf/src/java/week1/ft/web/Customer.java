@@ -53,7 +53,7 @@ public class Customer {
 		Customer c = new Customer();
 		c.address = rs.getString("address");
 		c.customerId = rs.getString("id");
-		c.tName = rs.getString("name");
+		c.tname = rs.getString("name");
 		c.phone = rs.getString("contact");
 
 		return (c);

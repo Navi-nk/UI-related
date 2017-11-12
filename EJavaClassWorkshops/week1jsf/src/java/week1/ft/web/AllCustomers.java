@@ -25,7 +25,7 @@ public class AllCustomers {
 
 	@PostConstruct
 	private void init() {
-
+                System.out.println("week1.ft.web.AllCustomers.init()");
 		try (Connection conn = ds.getConnection()) {
 
 			Statement stmt = conn.createStatement();
