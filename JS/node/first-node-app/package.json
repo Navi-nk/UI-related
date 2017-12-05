@@ -1,0 +1,17 @@
+{
+  "name": "first-node-app",
+  "version": "1.0.0",
+  "description": "back end app for react web app (first-react-app)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "*",
+    "express": "*",
+    "mongoose": "*"
+  },
+  "author": "Navi",
+  "license": "ISC"
+}
