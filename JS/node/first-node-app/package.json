@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "body-parser": "*",
+    "cors": "^2.8.4",
     "express": "*",
     "mongoose": "*"
   },

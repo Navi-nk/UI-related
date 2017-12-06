@@ -38,3 +38,8 @@ module.exports.getTeamById = function(id,callback){
 module.exports.addTeam = function(team,callback){
 	Team.create(team,callback);
 }
+
+//remove team
+module.exports.removeTeam = function(id,callback){
+	Team.findByIdAndRemove(id,callback);
+}

@@ -9,7 +9,7 @@ class TeamItem extends Component {
   	
     return (
     		<li className="TeamItem"> 
-        		<strong>{this.props.team.id}</strong> - {this.props.team.title} - {this.props.team.desc} - {this.props.team.size} <a href="#" onClick={this.handleDeleteTeam.bind(this,this.props.team.id)}>Delete</a>
+        		<strong>{this.props.team._id}</strong> - {this.props.team.title} - {this.props.team.desc} - {this.props.team.size} <a href="#" onClick={this.handleDeleteTeam.bind(this,this.props.team._id)}>Delete</a>
       		</li>
     );
   }

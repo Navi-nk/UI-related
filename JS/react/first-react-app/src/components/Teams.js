@@ -11,11 +11,9 @@ class Teams extends Component {
 		let teamItems;
 		if(this.props.teams){
 			teamItems = this.props.teams.map(team => {
-  			//console.log(team);
   			return(
-  				<TeamItem key={team.id} team={team} deleteTeam={this.handleDeleteTeam.bind(this)}/>
+  				<TeamItem key={team.title} team={team} deleteTeam={this.handleDeleteTeam.bind(this)}/>
   				);
-  			
   		});
   	}
   	

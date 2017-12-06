@@ -2,8 +2,10 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose');
+var cors = require('cors')
 
 app.use(bodyParser.json());
+app.use(cors())
 Team = require('./models/team');
 
 //connect to mongo
@@ -24,6 +26,8 @@ app.get('/api/teams',function(req,res){
 		if(err){
 			throw err;
 		}
+		res.setHeader('Content-Type', 'application/json');
+		res.setHeader('Access-Control-Allow-Origin', '*');
 		res.json(teams);
 	})
 });
@@ -34,6 +38,8 @@ app.get('/api/teams/:_id',function(req,res){
 		if(err){
 			throw err;
 		}
+		res.setHeader('Content-Type', 'application/json');
+		res.setHeader('Access-Control-Allow-Origin', '*');
 		res.json(team);
 	})
 });
@@ -46,6 +52,18 @@ app.post('/api/teams',function(req,res){
 		if(err){
 			throw err;
 		}
+		res.setHeader('Content-Type', 'application/json');
+		res.json(team);
+	})
+});
+
+//delete method
+app.delete('/api/teams/:_id',function(req,res){
+	Team.removeTeam(req.params._id, function(err,team){
+		if(err){
+			throw err;
+		}
+		res.setHeader('Content-Type', 'application/json');
 		res.json(team);
 	})
 });

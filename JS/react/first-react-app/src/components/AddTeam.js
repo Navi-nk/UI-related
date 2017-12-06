@@ -29,8 +29,8 @@ class AddTeam extends Component {
   	if(this.props.teams){
   		this.props.teams.forEach(t => {
 
-  			if(tid < t.id)
-  				tid = t.id;
+  			if(tid < t._id)
+  				tid = t._id;
   		});
   	}
 
@@ -41,14 +41,10 @@ class AddTeam extends Component {
   		alert('description is requierd')
   	}
   	else{
-  		console.log(tid);
-  		console.log(this.refs.title.value);
-  		console.log(this.refs.desc.value);
-  		console.log(this.refs.size.value);
 
   		this.setState({
   			newTeam:{
-  				id: parseInt(tid,10) + 1,
+  				_id: parseInt(tid,10) + 1,
   				title:this.refs.title.value,
   				desc:this.refs.desc.value,
   				size: this.refs.size.value
